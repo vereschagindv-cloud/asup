@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АСУП - Система управления производством для НПО</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e61c1c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            color: #e8e8e8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #e61c1c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c91818;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 28, 28, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1a1a2e;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+            text-align: center;
+        }
+
+        section > p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: #f8f9fa;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: #e61c1c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+        }
+
+        .features-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: #e8e8e8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: #e61c1c;
+            color: white;
+        }
+
+        .tab-btn:hover {
+            background: #d4d4d4;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            border-left: 4px solid #e61c1c;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .feature-item h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            background: #f8f9fa;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .use-case-card h3 {
+            color: #e61c1c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .use-case-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .use-case-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .use-case-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e61c1c;
+            font-weight: bold;
+        }
+
+        /* Modules Section */
+        .modules {
+            background: white;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .module-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(230, 28, 28, 0.2);
+        }
+
+        .module-card h3 {
+            margin-bottom: 1rem;
+            color: #e61c1c;
+        }
+
+        .module-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Results Section */
+        .results {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+
+        .results h2 {
+            color: white;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(230, 28, 28, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            color: #e61c1c;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #e61c1c 0%, #c91818 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.3rem;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .features-tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <svg viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2_19)">
+                        <path d="M21.5625 46C21.5625 56.359 28.1356 65.6278 37.9189 69.0643C39.3234 69.5576 40.8618 68.8192 41.3553 67.4146C41.8487 66.0102 41.11 64.4717 39.7055 63.9783C32.078 61.2991 26.9531 54.0741 26.9531 46C26.9531 35.4974 35.4974 26.9531 46 26.9531C48.8905 26.9531 51.6673 27.5867 54.2538 28.8359C55.5942 29.4838 57.2055 28.9218 57.8531 27.5815C58.5007 26.2412 57.939 24.6298 56.5985 23.9822C54.0883 22.7695 51.4395 22.009 48.6953 21.7091V16.2966C61.7027 17.4897 72.2824 26.9891 75.0947 39.4083C75.4228 40.8575 76.8633 41.7709 78.3186 41.4419C79.7705 41.1132 80.6808 39.6698 80.3521 38.2179C76.8019 22.5386 62.7438 10.7812 46 10.7812C39.3338 10.7812 32.8392 12.661 27.2185 16.2172C25.9605 17.013 25.5859 18.6782 26.3819 19.936C27.1777 21.1941 28.8431 21.5686 30.1007 20.7726C34.0966 18.2444 38.6157 16.7217 43.3047 16.2978V21.7118C31.0935 23.0579 21.5625 33.4361 21.5625 46Z" fill="#E61C1C"/>
+                        <path d="M78.3182 50.5587C76.8669 50.2299 75.4231 51.1404 75.0943 52.5922C74.0553 57.1809 71.909 61.4729 68.8974 65.0857L65.0704 61.2587C68.462 57.0183 70.4375 51.674 70.4375 46C70.4375 42.2907 69.6235 38.7248 68.0178 35.4013C67.3702 34.0612 65.759 33.4995 64.4183 34.1469C63.078 34.7945 62.5163 36.406 63.1639 37.7464C64.0198 39.518 64.5865 41.379 64.8586 43.3047H59.388C58.133 37.0613 52.6077 32.3438 46.0002 32.3438C38.47 32.3438 32.3439 38.4699 32.3439 46C32.3439 53.5302 38.47 59.6563 46.0002 59.6563C52.6077 59.6563 58.133 54.9388 59.388 48.6953H64.8516C63.8548 55.6464 59.0613 61.6016 52.2945 63.9785C50.8902 64.4719 50.1515 66.0104 50.6447 67.4148C51.1382 68.8193 52.6766 69.5578 54.0811 69.0645C56.734 68.1327 59.1483 66.769 61.2621 65.0739L65.0887 68.9005C59.7206 73.384 52.9235 75.8282 46 75.8282C29.5527 75.8282 16.1719 62.4474 16.1719 46C16.1719 40.3557 17.7628 34.858 20.7726 30.1009C21.5686 28.8429 21.194 27.1779 19.936 26.3821C18.678 25.5863 17.0132 25.9607 16.2172 27.2187C12.661 32.8394 10.7812 39.3338 10.7812 46C10.7812 65.4198 26.5803 81.2188 46 81.2188C62.7442 81.2188 76.8013 69.462 80.3519 53.7827C80.6806 52.331 79.7701 50.8875 78.3182 50.5587ZM46 54.2657C41.4424 54.2657 37.7344 50.5576 37.7344 46C37.7344 41.4424 41.4424 37.7344 46 37.7344C50.5576 37.7344 54.2656 41.4424 54.2656 46C54.2656 50.5576 50.5576 54.2657 46 54.2657Z" fill="#E61C1C"/>
+                        <path d="M46 0C20.5771 0 0 20.5737 0 46C0 71.4229 20.5737 92 46 92C71.4227 92 92 71.4263 92 46C92 20.5771 71.4263 0 46 0ZM46 86.6094C23.5565 86.6094 5.39062 68.4467 5.39062 46C5.39062 23.5565 23.5533 5.39062 46 5.39062C68.4433 5.39062 86.6094 23.5531 86.6094 46C86.6094 68.4433 68.4469 86.6094 46 86.6094Z" fill="#E61C1C"/>
+                    </g>
+                </svg>
+                АСУП
+            </div>
+            <ul>
+                <li><a href="#features">Возможности</a></li>
+                <li><a href="#benefits">Преимущества</a></li>
+                <li><a href="#use-cases">Применение</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Автоматизированная система управления производством</h1>
+            <p class="hero-subtitle">Полный контроль над производственными процессами на нефтебазах и АЗС. Мониторинг в реальном времени, сохранность продукции и оптимизация операций.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Получить демо</button>
+                <button class="btn-secondary" onclick="alert('Загрузка документации...')">Скачать брошюру</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Ключевые преимущества АСУП</h2>
+            <p>Система обеспечивает эффективное управление всеми аспектами производства нефтепродуктов</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Мониторинг в реальном времени</h3>
+                    <p>Полный контроль всех процессов приема, хранения и отпуска нефтепродуктов 24/7</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Сохранность продукции</h3>
+                    <p>Выявление хищений, контроль смешений, снижение технологических потерь до 30%</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3>Автоматизация процессов</h3>
+                    <p>Автоматический расчет балансов, электронные журналы, цифровая отчетность</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Снижение OPEX</h3>
+                    <p>Сокращение простоев на 30%, времени ремонтов на 21%, затрат на диспетчеризацию на 30%</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <h3>Документооборот</h3>
+                    <p>Электронные ТТН, отчеты, журналы. Полная автоматизация контрольных процедур</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Соответствие нормам</h3>
+                    <p>Контроль качества НП, метрологические поверки, управление SLA на уровне 99%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Функциональные модули системы</h2>
+            <p>Модульная архитектура позволяет гибко адаптировать систему под ваши требования</p>
+
+            <div class="features-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'operator')">Оператор НБ</button>
+                <button class="tab-btn" onclick="switchTab(event, 'logistics')">Логистика</button>
+                <button class="tab-btn" onclick="switchTab(event, 'metrology')">Метрология</button>
+                <button class="tab-btn" onclick="switchTab(event, 'quality')">Качество НП</button>
+                <button class="tab-btn" onclick="switchTab(event, 'accounting')">Учет движения НП</button>
+            </div>
+
+            <div id="operator" class="tab-content active">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>📊 Мониторинг оборудования</h4>
+                        <p>Отслеживание параметров работы технологического и измерительного оборудования в режиме реального времени</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📄 Журнал приема/отгрузки</h4>
+                        <p>Автоматизированный учет приема и отгрузки НП с расчетом массы (ПМСИ, КМСИ, ПМДИ)</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🗂️ Электронная база поставок</h4>
+                        <p>Сводная база ТТН, информация о перевозчиках, результаты измерений и недопоставки</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📋 Вахтовый журнал</h4>
+                        <p>Полное ведение вахтовых записей и контроль смен</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✓ Чек-листы проверок</h4>
+                        <p>Электронные чек-листы состояния оборудования с автоматизацией процесса</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="logistics" class="tab-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>📊 Мониторинг остатков</h4>
+                        <p>Онлайн контроль уровней и объемов в резервуарах в реальном времени</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🏗️ Параметры резервуарного парка</h4>
+                        <p>Полная информация о парке резервуаров, их характеристиках и состоянии</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📍 Электронная очередь</h4>
+                        <p>Управление очередью автоцистерн на налив с отображением на информационных табло</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🚚 Контроль транспорта</h4>
+                        <p>Слежение за движением и въездом бензовозов, регистрация несоответствий</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⏱️ Мониторинг операций</h4>
+                        <p>Отслеживание времени загрузки/разгрузки и контроль процессов</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🗄️ Единая база данных</h4>
+                        <p>Централизованный учет всех перемещений нефтепродуктов</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="metrology" class="tab-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>📅 График поверок</h4>
+                        <p>Планирование и контроль графика поверки и калибровки средств измерения</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✅ Результаты КМХ</h4>
+                        <p>Ведение и анализ результатов комплексных метрологических характеристик</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🔧 Заявки на обслуживание</h4>
+                        <p>Управление заявками на техническое обслуживание и ремонт приборов</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📊 Мониторинг параметров</h4>
+                        <p>Онлайн контроль уровня, объема, температуры и массы нефтепродуктов</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📐 Градуировочные таблицы</h4>
+                        <p>Ведение и мониторинг градуировочных таблиц резервуаров</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⚠️ Аномалии и потери</h4>
+                        <p>Автоматическое выявление отклонений и фиксация потерь нефтепродуктов</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quality" class="tab-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>📝 Журнал регистрации проб</h4>
+                        <p>Электронная регистрация всех отбираемых проб с полной трассировкой</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🧪 Лабораторные испытания</h4>
+                        <p>Планирование и выполнение плановых и внеплановых испытаний</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📊 Статистика отклонений</h4>
+                        <p>Анализ отклонений качества, смешений и некондиции продукции</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🔬 Результаты испытаний</h4>
+                        <p>Полная база результатов проведенных испытаний с архивированием</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📄 Нормативная база</h4>
+                        <p>Хранилище сертификатов, деклараций и нормативных документов</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⏰ Контроль сроков</h4>
+                        <p>Мониторинг актуальности сроков действия документации</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="accounting" class="tab-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>🧮 Материальный баланс</h4>
+                        <p>Автоматический расчет материального баланса приемки и отпуска</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📋 Инвентаризации</h4>
+                        <p>Планирование, проведение и фиксация результатов инвентаризаций</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⚠️ Фиксация инцидентов</h4>
+                        <p>Регистрация всех инцидентов по сохранности количества продукции</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📊 Мониторинг недопоставок</h4>
+                        <p>Отслеживание и анализ случаев недопоставок и расхождений</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📈 Динамические дашборды</h4>
+                        <p>Аналитические дашборды с отклонениями бизнес-процессов</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📊 Сравнение периодов</h4>
+                        <p>Сравнительный анализ показателей за разные периоды времени</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <h2>Применение системы</h2>
+            <p>АСУП адаптирована для различных объектов нефтепродуктообеспечения</p>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Нефтебазовое хозяйство (НБ)</h3>
+                    <p style="color: #999; margin-bottom: 1rem;">Комплексное управление производственными процессами на нефтебазах</p>
+                    <ul>
+                        <li>Управление приемом НП из различных источников</li>
+                        <li>Контроль хранения и перекачек</li>
+                        <li>Автоматизация отпуска НП</li>
+                        <li>Управление резервуарным парком</li>
+                        <li>Контроль качества НП</li>
+                        <li>Полный материальный учет</li>
+                        <li>Интеграция с LIMS и ЕАСКУ</li>
+                        <li>Соответствие всем нормативным требованиям</li>
+                    </ul>
+                </div>
+
+                <div class="use-case-card">
+                    <h3>Автозаправочные станции (АЗС)</h3>
+                    <p style="color: #999; margin-bottom: 1rem;">Мониторинг и управление инфраструктурой АЗС</p>
+                    <ul>
+                        <li>Мониторинг остатков топлива в резервуарах</li>
+                        <li>Контроль работы насосных систем</li>
+                        <li>Выявление хищений и утечек</li>
+                        <li>Предиктивное обслуживание оборудования</li>
+                        <li>Контроль процессов заправки</li>
+                        <li>Управление SLA работы станций</li>
+                        <li>Снижение простоев до 30%</li>
+                        <li>Автоматизация отчетности</li>
+                    </ul>
+                </div>
+
+                <div class="use-case-card">
+                    <h3>Специализированные объекты</h3>
+                    <p style="color: #999; margin-bottom: 1rem;">Гибкая адаптация под специфические требования</p>
+                    <ul>
+                        <li>Логистические центры</li>
+                        <li>Трубопроводные системы</li>
+                        <li>Железнодорожные цистерновозы</li>
+                        <li>Системы восстановления качества</li>
+                        <li>Склады специализированной тары</li>
+                        <li>Центры стандартизации и качества</li>
+                        <li>Диспетчерские центры</li>
+                        <li>Объекты метрологического контроля</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Overview -->
+    <section class="modules">
+        <div class="container">
+            <h2>Полный набор модулей системы</h2>
+            <p>Каждый модуль разработан для специальной роли в системе управления</p>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <h3>👨‍💼 Оператор</h3>
+                    <p>Контроль операций приема/отгрузки, электронные журналы</p>
+                </div>
+                <div class="module-card">
+                    <h3>🎯 Мастер</h3>
+                    <p>Управление производством, контроль процессов</p>
+                </div>
+                <div class="module-card">
+                    <h3>🔬 Лаборант</h3>
+                    <p>Регистрация проб и управление испытаниями</p>
+                </div>
+                <div class="module-card">
+                    <h3>👨‍🔬 Начальник лаборатории</h3>
+                    <p>Планирование и мониторинг качества</p>
+                </div>
+                <div class="module-card">
+                    <h3>🏢 Начальник НБ</h3>
+                    <p>Аналитика и управление ресурсами</p>
+                </div>
+                <div class="module-card">
+                    <h3>⚙️ Администратор</h3>
+                    <p>Конфигурирование и техническая поддержка</p>
+                </div>
+                <div class="module-card">
+                    <h3>🚚 Водитель</h3>
+                    <p>Электронная очередь и контроль процесса</p>
+                </div>
+                <div class="module-card">
+                    <h3>🛡️ Охранник</h3>
+                    <p>Контроль въезда и безопасность</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h2>Доказанные результаты внедрения</h2>
+            <p>Метрики улучшения, достигнутые на объектах внедрения АСУП</p>
+
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-value">↓ 30%</div>
+                    <div class="result-label">Сокращение технологических потерь</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">↓ 30%</div>
+                    <div class="result-label">Снижение простоев оборудования</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">↓ 21%</div>
+                    <div class="result-label">Сокращение времени ремонтов</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">99%</div>
+                    <div class="result-label">Достижение SLA надежности</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">↓ 5%</div>
+                    <div class="result-label">Снижение OPEX</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">↓ 30%</div>
+                    <div class="result-label">Сокращение затрат диспетчеризации</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">100%</div>
+                    <div class="result-label">Автоматизация процессов учета</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value">↓ 2ч</div>
+                    <div class="result-label">Снижение работы персонала в сутки</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Готовы повысить эффективность производства?</h2>
+            <p>АСУП уже внедрена на ведущих предприятиях нефтепродуктообеспечения и доказала свою эффективность</p>
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Запросить демонстрацию</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <p>Мы помогим вам выбрать оптимальное решение и организовать внедрение на вашем объекте</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Контактная информация</h3>
+                    <p><strong>Email:</strong> info@asup.ru</p>
+                    <p><strong>Телефон:</strong> +7 (XXX) XXX-XX-XX</p>
+                    <p><strong>Адрес:</strong> Москва, Россия</p>
+                    <p><strong>Часы работы:</strong> Пн-Пт 9:00-18:00</p>
+                    <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+                        Готовы ответить на все вопросы о внедрении АСУП на вашем объекте и предложить индивидуальное решение под ваши требования.
+                    </p>
+                </div>
+
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Компания/Объект</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" required placeholder="Расскажите о вашем объекте и требованиях..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Отправить запрос</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 АСУП - Автоматизированная система управления производством. Все права защищены.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Решение для предприятий нефтепродуктообеспечения | Готово к внедрению</p>
+    </footer>
+
+    <script>
+        function switchTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Форма отправлена:', formData);
+
+            alert('Спасибо за ваш запрос! Мы свяжемся с вами в ближайшее время.');
+
+            event.target.reset();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

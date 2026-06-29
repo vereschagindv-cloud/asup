@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(python3 -m http.server 8000)"
+    ]
+  }
+}
