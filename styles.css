@@ -1035,12 +1035,29 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
+  .container { padding: 0 16px; }
+
+  .hero { padding: 100px 0 40px; }
+  .hero__title { font-size: clamp(24px, 5vw, 48px); }
+  .hero__sub { font-size: 14px; }
+  .hero__actions { flex-direction: column; gap: 10px; }
+  .hero__actions .btn { width: 100%; max-width: 100%; padding: 12px 20px; font-size: 14px; }
+  .hero__dashboard { max-width: 100%; margin: 0 16px; }
+
+  .section { padding: 40px 0; }
+  .section__title { font-size: 22px; margin-bottom: 24px; }
+
+  .tab { padding: 6px 10px; font-size: 11px; min-height: 36px; }
+  .tabs { gap: 4px; margin-bottom: 24px; }
+
   .industries__grid { grid-template-columns: 1fr; }
   .pain__grid { grid-template-columns: 1fr; }
   .solution__numbers { grid-template-columns: 1fr; }
   .trust__stats { grid-template-columns: 1fr 1fr; }
-  .hero__actions { flex-direction: column; }
-  .hero__actions .btn { width: 100%; max-width: 320px; }
+  .modules__grid { grid-template-columns: 1fr !important; }
+  .roles__grid { grid-template-columns: 1fr; }
+
+  .module__card { padding: 16px; }
 }
 
 /* ─── TECH STACK ─────────────────────────────────────────────── */
