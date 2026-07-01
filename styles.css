@@ -1065,7 +1065,7 @@ img { max-width: 100%; display: block; }
 
   .container { padding: 0 12px; width: 100%; overflow-x: hidden; }
 
-  .hero { padding: 60px 0 20px; overflow-x: hidden; }
+  .hero { padding: 100px 0 20px; overflow-x: hidden; }
   .hero__inner { padding: 0; width: 100%; }
   .hero__title { font-size: 20px; line-height: 1.2; margin-bottom: 12px; }
   .hero__sub { font-size: 12px; line-height: 1.4; margin-bottom: 14px; width: 100%; }
