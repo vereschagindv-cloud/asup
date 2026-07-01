@@ -10,6 +10,37 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @media (max-width: 640px) {
+      .hero__sub { display: none !important; }
+      .hero__badge { display: none !important; }
+      .hero__actions { margin-bottom: 10px !important; }
+      .hero { overflow: visible !important; }
+      p { word-break: break-word !important; }
+    }
+
+    .integ__badge {
+      white-space: normal !important;
+      word-break: break-word !important;
+      flex-wrap: wrap !important;
+      display: inline-flex !important;
+      margin-bottom: 4px !important;
+    }
+
+    .integrations__grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      justify-content: center !important;
+    }
+
+    .integrations__title,
+    .integrations__sub {
+      word-break: break-word !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -42,12 +73,12 @@
     <div class="hero__glow hero__glow--1"></div>
     <div class="hero__glow hero__glow--2"></div>
     <div class="container hero__inner">
-      <div class="hero__badge fade-in">Производственная система управления реального времени</div>
+      <div class="hero__badge fade-in" style="display: none !important; visibility: hidden !important; height: 0 !important; margin: 0 !important;">Производственная система управления реального времени</div>
       <h1 class="hero__title fade-in">
         Управление предприятием<br />
         <span class="gradient-text">нефтепродуктообеспечения</span>
       </h1>
-      <p class="hero__sub fade-in">
+      <p class="hero__sub fade-in" style="display: none !important; visibility: hidden !important; height: 0 !important; margin: 0 !important;">
         Единая платформа для нефтехранилищ светлых нефтепродуктов, битумных материалов и ТЗК аэропортов: мониторинг оборудования, контроль качества, управление остатками, учет движения продукции и оптимизация всех бизнес-процессов в режиме реального времени.
       </p>
       <div class="hero__actions fade-in">
