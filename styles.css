@@ -1044,6 +1044,20 @@ img { max-width: 100%; display: block; }
   .footer__inner { flex-direction: column; text-align: center; }
   .footer__nav { margin-left: 0; flex-wrap: wrap; justify-content: center; }
   .pain__grid { grid-template-columns: 1fr 1fr; }
+
+  .tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  .tab {
+    padding: 6px 10px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1087,6 +1101,8 @@ img { max-width: 100%; display: block; }
   .trust__stats { grid-template-columns: 1fr 1fr; }
   .modules__grid { grid-template-columns: 1fr !important; width: 100%; }
   .roles__grid { grid-template-columns: 1fr; }
+
+  .integrations__sub { margin-top: 0 !important; }
 
   .module__card { padding: 12px; width: 100%; }
   .module__icon { font-size: 24px; margin-bottom: 6px; }
