@@ -11,12 +11,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    @media (max-width: 640px) {
+    @media (max-width: 500px) {
       .hero__sub { display: none !important; }
       .hero__badge { display: none !important; }
+    }
+
+    @media (max-width: 640px) {
       .hero__actions { margin-bottom: 10px !important; }
-      .hero { overflow: visible !important; }
-      p { word-break: break-word !important; }
+      .hero { overflow: hidden !important; }
     }
 
     .integ__badge {
@@ -78,7 +80,7 @@
         Управление предприятием<br />
         <span class="gradient-text">нефтепродуктообеспечения</span>
       </h1>
-      <p class="hero__sub fade-in" style="display: none !important; visibility: hidden !important; height: 0 !important; margin: 0 !important;">
+      <p class="hero__sub fade-in">
         Единая платформа для нефтехранилищ светлых нефтепродуктов, битумных материалов и ТЗК аэропортов: мониторинг оборудования, контроль качества, управление остатками, учет движения продукции и оптимизация всех бизнес-процессов в режиме реального времени.
       </p>
       <div class="hero__actions fade-in">
@@ -798,4 +800,3 @@
 
 </body>
 </html>
-<!-- v1782926920 -->
