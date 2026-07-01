@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>АСУП ПНПО
+              <span style="font-size: 0.9rem; opacity: 0.85;">Управление светлыми нефтепродуктами и битумными материалами</title>
+  <meta name="description" content="АСУП ПНПО
+              <span style="font-size: 0.9rem; opacity: 0.85;">автоматизированная система управления производством для нефтехранилищ светлых нефтепродуктов, битумных материалов и ТЗК аэропортов. Мониторинг в реальном времени, контроль качества, оптимизация процессов." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @media (max-width: 768px) {
+      .hero__sub { display: none !important; visibility: hidden !important; height: 0 !important; }
+      .hero__badge { display: none !important; visibility: hidden !important; height: 0 !important; }
+    }
+
+    @media (max-width: 640px) {
+      .hero__actions { margin-bottom: 10px !important; }
+      .hero { overflow: hidden !important; }
+      .integrations__sub { margin-bottom: 60px !important; padding-bottom: 20px !important; }
+    }
+
+    .integ__badge {
+      white-space: normal !important;
+      word-break: break-word !important;
+      flex-wrap: wrap !important;
+      display: inline-flex !important;
+      margin-bottom: 4px !important;
+    }
+
+    .integrations__grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      justify-content: center !important;
+    }
+
+    .integrations__title,
+    .integrations__sub {
+      word-break: break-word !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <svg width="38" height="38" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
+          <path d="M21.5625 46C21.5625 56.359 28.1356 65.6278 37.9189 69.0643C39.3234 69.5576 40.8618 68.8192 41.3553 67.4146C41.8487 66.0102 41.11 64.4717 39.7055 63.9783C32.078 61.2991 26.9531 54.0741 26.9531 46C26.9531 35.4974 35.4974 26.9531 46 26.9531C48.8905 26.9531 51.6673 27.5867 54.2538 28.8359C55.5942 29.4838 57.2055 28.9218 57.8531 27.5815C58.5007 26.2412 57.939 24.6298 56.5985 23.9822C54.0883 22.7695 51.4395 22.009 48.6953 21.7091V16.2966C61.7027 17.4897 72.2824 26.9891 75.0947 39.4083C75.4228 40.8575 76.8633 41.7709 78.3186 41.4419C79.7705 41.1132 80.6808 39.6698 80.3521 38.2179C76.8019 22.5386 62.7438 10.7812 46 10.7812C39.3338 10.7812 32.8392 12.661 27.2185 16.2172C25.9605 17.013 25.5859 18.6782 26.3819 19.936C27.1777 21.1941 28.8431 21.5686 30.1007 20.7726C34.0966 18.2444 38.6157 16.7217 43.3047 16.2978V21.7118C31.0935 23.0579 21.5625 33.4361 21.5625 46Z" fill="#E61C1C"/>
+          <path d="M78.3182 50.5587C76.8669 50.2299 75.4231 51.1404 75.0943 52.5922C74.0553 57.1809 71.909 61.4729 68.8974 65.0857L65.0704 61.2587C68.462 57.0183 70.4375 51.674 70.4375 46C70.4375 42.2907 69.6235 38.7248 68.0178 35.4013C67.3702 34.0612 65.759 33.4995 64.4183 34.1469C63.078 34.7945 62.5163 36.406 63.1639 37.7464C64.0198 39.518 64.5865 41.379 64.8586 43.3047H59.388C58.133 37.0613 52.6077 32.3438 46.0002 32.3438C38.47 32.3438 32.3439 38.4699 32.3439 46C32.3439 53.5302 38.47 59.6563 46.0002 59.6563C52.6077 59.6563 58.133 54.9388 59.388 48.6953H64.8516C63.8548 55.6464 59.0613 61.6016 52.2945 63.9785C50.8902 64.4719 50.1515 66.0104 50.6447 67.4148C51.1382 68.8193 52.6766 69.5578 54.0811 69.0645C56.734 68.1327 59.1483 66.769 61.2621 65.0739L65.0887 68.9005C59.7206 73.384 52.9235 75.8282 46 75.8282C29.5527 75.8282 16.1719 62.4474 16.1719 46C16.1719 40.3557 17.7628 34.858 20.7726 30.1009C21.5686 28.8429 21.194 27.1779 19.936 26.3821C18.678 25.5863 17.0132 25.9607 16.2172 27.2187C12.661 32.8394 10.7812 39.3338 10.7812 46C10.7812 65.4198 26.5803 81.2188 46 81.2188C62.7442 81.2188 76.8013 69.462 80.3519 53.7827C80.6806 52.331 79.7701 50.8875 78.3182 50.5587ZM46 54.2657C41.4424 54.2657 37.7344 50.5576 37.7344 46C37.7344 41.4424 41.4424 37.7344 46 37.7344C50.5576 37.7344 54.2656 41.4424 54.2656 46C54.2656 50.5576 50.5576 54.2657 46 54.2657Z" fill="#E61C1C"/>
+          <path d="M46 0C20.5771 0 0 20.5737 0 46C0 71.4229 20.5737 92 46 92C71.4227 92 92 71.4263 92 46C92 20.5771 71.4263 0 46 0ZM46 86.6094C23.5565 86.6094 5.39062 68.4467 5.39062 46C5.39062 23.5565 23.5533 5.39062 46 5.39062C68.4433 5.39062 86.6094 23.5531 86.6094 46C86.6094 68.4433 68.4469 86.6094 46 86.6094Z" fill="#E61C1C"/>
+        </svg>
+        АСУП ПНПО
+      </a>
+      <ul class="nav__links">
+        <li><a href="#modules">Функции</a></li>
+        <li><a href="#industries">Применение</a></li>
+        <li><a href="#integrations">Интеграции</a></li>
+        <li><a href="#roles">Роли</a></li>
+        <li><a href="#cta">Контакты</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="container hero__inner">
+      <div class="hero__badge fade-in" style="display: none !important;">Производственная система управления реального времени</div>
+      <h1 class="hero__title fade-in">
+        Управление предприятием<br />
+        <span class="gradient-text">нефтепродуктообеспечения</span>
+      </h1>
+      <p class="hero__sub fade-in" style="display: none !important; max-height: 0; overflow: hidden;">
+        Единая платформа для нефтехранилищ светлых нефтепродуктов, битумных материалов и ТЗК аэропортов: мониторинг оборудования, контроль качества, управление остатками, учет движения продукции и оптимизация всех бизнес-процессов в режиме реального времени.
+      </p>
+      <div class="hero__actions fade-in">
+        <a href="#cta" class="btn btn--primary">Запросить демо на ваших данных</a>
+        <a href="#modules" class="btn btn--ghost">Смотреть возможности</a>
+      </div>
+      <div class="hero__dashboard fade-in" aria-hidden="true" style="width: 100%; max-width: 100%; overflow-x: hidden;">
+        <div class="dashboard" style="width: 100%; box-sizing: border-box;">
+          <div class="dashboard__header" style="width: 100%; box-sizing: border-box;">
+            <div class="dashboard__title">Управление производством ПНПО</div>
+            <div class="dashboard__live"><span class="dot dot--green"></span>Онлайн</div>
+          </div>
+
+          <!-- Текущие задачи -->
+          <div style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); box-sizing: border-box; width: 100%;">
+            <div style="font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 6px;">Задачи</div>
+            <div style="display: grid; gap: 6px; width: 100%; box-sizing: border-box;">
+              <div style="background: linear-gradient(to right, #f0fdf4, #ffffff); border: 1px solid #dcfce7; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; gap: 8px; box-sizing: border-box; width: 100%; min-width: 0;">
+                <div style="width: 3px; height: 3px; background: #16a34a; border-radius: 50%; flex-shrink: 0;"></div>
+                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                  <div style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Приемка НП РВС-1</div>
+                  <div style="font-size: 10px; color: #999;">234.5 / 250 м³</div>
+                </div>
+                <div style="background: #16a34a; color: white; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; white-space: nowrap; flex-shrink: 0;">ВЫПОЛНЯЕТСЯ</div>
+              </div>
+              <div style="background: linear-gradient(to right, #fffbf0, #ffffff); border: 1px solid #fed7aa; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; gap: 8px; box-sizing: border-box; width: 100%; min-width: 0;">
+                <div style="width: 3px; height: 3px; background: #ea580c; border-radius: 50%; flex-shrink: 0;"></div>
+                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                  <div style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Контроль качества</div>
+                  <div style="font-size: 10px; color: #999;">5 проб</div>
+                </div>
+                <div style="background: #ea580c; color: white; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; white-space: nowrap; flex-shrink: 0;">ОЖИДАНИЕ</div>
+              </div>
+              <div style="background: linear-gradient(to right, #f5f5f5, #ffffff); border: 1px solid #e5e5e5; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; gap: 8px; box-sizing: border-box; width: 100%; min-width: 0;">
+                <div style="width: 3px; height: 3px; background: #6b7280; border-radius: 50%; flex-shrink: 0;"></div>
+                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                  <div style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Отпуск в ТС</div>
+                  <div style="font-size: 10px; color: #999;">180 м³</div>
+                </div>
+                <div style="background: #6b7280; color: white; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; white-space: nowrap; flex-shrink: 0;">ГОТОВО</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Метрики -->
+          <div style="padding: 10px 0; width: 100%; box-sizing: border-box;">
+            <div style="font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 6px;">Показатели</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; box-sizing: border-box;">
+              <div style="background: #f0f9ff; border: 1px solid #e0f2fe; border-radius: 6px; padding: 8px; box-sizing: border-box; min-width: 0;">
+                <div style="font-size: 9px; color: #666; text-transform: uppercase; font-weight: 600; margin-bottom: 3px;">Баланс</div>
+                <div style="font-size: 14px; font-weight: 800; color: #16a34a;">+0.08%</div>
+              </div>
+              <div style="background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; padding: 8px; box-sizing: border-box; min-width: 0;">
+                <div style="font-size: 9px; color: #666; text-transform: uppercase; font-weight: 600; margin-bottom: 3px;">Температура</div>
+                <div style="font-size: 14px; font-weight: 800; color: #ea580c;">18.2°C</div>
+              </div>
+              <div style="background: #f0fdf4; border: 1px solid #dcfce7; border-radius: 6px; padding: 8px; box-sizing: border-box; min-width: 0;">
+                <div style="font-size: 9px; color: #666; text-transform: uppercase; font-weight: 600; margin-bottom: 3px;">Оборудование</div>
+                <div style="font-size: 14px; font-weight: 800; color: #16a34a;">3/3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain section">
+    <div class="container">
+      <h2 class="section__title">Вызовы предприятий нефтепродуктообеспечения</h2>
+      <div class="pain__grid">
+        <div class="pain__card">
+          <span class="pain__icon">🔐</span>
+          <h3>Сохранность продукции</h3>
+          <p>Потери нефтепродуктов на приемке, хранении и отпуске. Необходим полный контроль остатков и выявление потерь.</p>
+        </div>
+        <div class="pain__card">
+          <span class="pain__icon">⏱️</span>
+          <h3>Простои оборудования</h3>
+          <p>Незапланированные остановки технологического оборудования. Нужна предиктивная диагностика и быстрое восстановление.</p>
+        </div>
+        <div class="pain__card">
+          <span class="pain__icon">📊</span>
+          <h3>Управление процессами</h3>
+          <p>Разрозненная информация из разных систем. Требуется единая платформа для всех операций в реальном времени.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES TABS -->
+  <section class="modules section" id="modules">
+    <div class="container">
+      <h2 class="section__title">Функциональные модули системы</h2>
+      <div class="tabs">
+        <button class="tab tab--active" data-tab="operator">Интерфейс оператора</button>
+        <button class="tab" data-tab="logistics">Интерфейс логистики</button>
+        <button class="tab" data-tab="metrology">Интерфейс метрологии</button>
+        <button class="tab" data-tab="quality">Контроль качества</button>
+        <button class="tab" data-tab="maintenance">Техническое обслуживание</button>
+        <button class="tab" data-tab="accounting">Учет движения НП</button>
+      </div>
+
+      <div class="modules__grid" id="operator" style="display: grid;">
+        <div class="module__card">
+          <span class="module__icon">📊</span>
+          <h3>Мониторинг оборудования</h3>
+          <p>Отслеживание параметров работы технологического оборудования в режиме реального времени</p>
+          <span class="module__tag">Оператор</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📄</span>
+          <h3>Журнал приема/отгрузки</h3>
+          <p>Автоматизированный учет приема и отгрузки НП с расчетом массы и объема</p>
+          <span class="module__tag">Оператор</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">🗂️</span>
+          <h3>Электронная база поставок</h3>
+          <p>Сводная база ТТН, информация о перевозчиках и результаты измерений</p>
+          <span class="module__tag">Оператор</span>
+        </div>
+      </div>
+
+      <div class="modules__grid" id="logistics" style="display: none;">
+        <div class="module__card">
+          <span class="module__icon">📊</span>
+          <h3>Онлайн мониторинг остатков</h3>
+          <p>Контроль уровней и объемов в резервуарах в реальном времени</p>
+          <span class="module__tag">Логистика</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">🏗️</span>
+          <h3>Параметры резервуарного парка</h3>
+          <p>Полная информация о парке резервуаров, их характеристиках и состоянии</p>
+          <span class="module__tag">Логистика</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📍</span>
+          <h3>Электронная очередь</h3>
+          <p>Управление очередью автоцистерн с отображением на информационных табло</p>
+          <span class="module__tag">Логистика</span>
+        </div>
+      </div>
+
+      <div class="modules__grid" id="metrology" style="display: none;">
+        <div class="module__card">
+          <span class="module__icon">📅</span>
+          <h3>График поверок</h3>
+          <p>Планирование и контроль графика поверки и калибровки средств измерения</p>
+          <span class="module__tag">Метрология</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">✅</span>
+          <h3>Результаты КМХ</h3>
+          <p>Ведение и анализ результатов комплексных метрологических характеристик</p>
+          <span class="module__tag">Метрология</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📊</span>
+          <h3>Мониторинг параметров</h3>
+          <p>Онлайн контроль уровня, объема, температуры и массы нефтепродуктов</p>
+          <span class="module__tag">Метрология</span>
+        </div>
+      </div>
+
+      <div class="modules__grid" id="quality" style="display: none;">
+        <div class="module__card">
+          <span class="module__icon">📝</span>
+          <h3>Журнал регистрации проб</h3>
+          <p>Электронная регистрация всех отбираемых проб с полной трассировкой</p>
+          <span class="module__tag">Качество</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">🧪</span>
+          <h3>Лабораторные испытания</h3>
+          <p>Планирование и выполнение плановых и внеплановых испытаний</p>
+          <span class="module__tag">Качество</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📊</span>
+          <h3>Статистика отклонений</h3>
+          <p>Анализ отклонений качества, смешений и некондиции продукции</p>
+          <span class="module__tag">Качество</span>
+        </div>
+      </div>
+
+      <div class="modules__grid" id="maintenance" style="display: none;">
+        <div class="module__card">
+          <span class="module__icon">📅</span>
+          <h3>График ТОиР</h3>
+          <p>Календарный план плановых и внеплановых работ по техническому обслуживанию и ремонту оборудования</p>
+          <span class="module__tag">ТОиР</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">🔧</span>
+          <h3>Заявки на ремонт</h3>
+          <p>Создание, приоритизация, отслеживание выполнения и закрытие работ по восстановлению оборудования</p>
+          <span class="module__tag">ТОиР</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📋</span>
+          <h3>Архив работ</h3>
+          <p>Полный реестр выполненных работ, использованных материалов, затрат времени и гарантийных сроков</p>
+          <span class="module__tag">ТОиР</span>
+        </div>
+      </div>
+
+      <div class="modules__grid" id="accounting" style="display: none;">
+        <div class="module__card">
+          <span class="module__icon">🧮</span>
+          <h3>Материальный баланс</h3>
+          <p>Автоматический расчет материального баланса приемки и отпуска</p>
+          <span class="module__tag">Учет</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📋</span>
+          <h3>Инвентаризации</h3>
+          <p>Планирование, проведение и фиксация результатов инвентаризаций</p>
+          <span class="module__tag">Учет</span>
+        </div>
+        <div class="module__card">
+          <span class="module__icon">📈</span>
+          <h3>Динамические дашборды</h3>
+          <p>Аналитические дашборды с отклонениями бизнес-процессов</p>
+          <span class="module__tag">Учет</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries section" id="industries">
+    <div class="container">
+      <h2 class="section__title">Применение по типам объектов</h2>
+      <div class="industries__grid">
+        <div class="industry__card">
+          <span class="industry__icon">🏭</span>
+          <h3>Нефтехранилища светлых НП</h3>
+          <p>Полное управление производством на нефтехранилищах светлых нефтепродуктов: приемка, хранение, контроль качества и отпуск продукции</p>
+        </div>
+        <div class="industry__card">
+          <span class="industry__icon">⚫</span>
+          <h3>Битумные материалы</h3>
+          <p>Управление хранением и отпуском битумных материалов с контролем физико-химических характеристик и соответствием ГОСТ</p>
+        </div>
+        <div class="industry__card">
+          <span class="industry__icon">✈️</span>
+          <h3>ТЗК Аэропортов</h3>
+          <p>Система мониторинга и управления топливозаправочными комплексами аэропортов с высокими требованиями к надежности и безопасности</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how section">
+    <div class="container">
+      <h2 class="section__title">Как система помогает бизнесу</h2>
+      <div class="how__steps">
+        <div class="how__step">
+          <div class="how__num">1</div>
+          <h3>Мониторинг</h3>
+          <p>Мониторинг всех параметров в реальном времени 24/7 с алертами при отклонениях. Полный контроль оборудования, остатков и критических процессов</p>
+        </div>
+        <span class="how__arrow">→</span>
+        <div class="how__step">
+          <div class="how__num">2</div>
+          <h3>Автоматизация</h3>
+          <p>Автоматизация расчетов и документооборота. Управление резервуарным парком, запасами и контроль качества нефтепродуктов на каждом этапе</p>
+        </div>
+        <span class="how__arrow">→</span>
+        <div class="how__step">
+          <div class="how__num">3</div>
+          <h3>Интеграция</h3>
+          <p>Интеграция с внешними системами (LIMS, ERP, SCADA, OPC). Единая экосистема с надежным обменом данных в реальном времени</p>
+        </div>
+        <span class="how__arrow">→</span>
+        <div class="how__step">
+          <div class="how__num">4</div>
+          <h3>Оптимизация</h3>
+          <p>Аналитика и отчеты для оптимизации. Снижение потерь, простоев и OPEX на основе данных реального времени</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="roles section" id="roles">
+    <div class="container">
+      <h2 class="section__title">Интерфейсы для всех ролей</h2>
+      <div class="roles__grid">
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">👤</div>
+          <h3>Оператор</h3>
+          <p>Контроль операций приема/отгрузки НП и регистрация событий</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">🎛️</div>
+          <h3>Мастер смены</h3>
+          <p>Управление производством, контроль процессов и фиксация инцидентов</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">🧪</div>
+          <h3>Лаборант</h3>
+          <p>Регистрация проб и управление испытаниями качества</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">📊</div>
+          <h3>Начальник объекта</h3>
+          <p>Аналитика, управление ресурсами и прием смены</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">⚙️</div>
+          <h3>Администратор</h3>
+          <p>Конфигурирование системы и техническая поддержка</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">🚛</div>
+          <h3>Водитель</h3>
+          <p>Электронная очередь и отслеживание процесса загрузки</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">🛡️</div>
+          <h3>Охранник</h3>
+          <p>Контроль въезда и безопасность на объекте</p>
+        </div>
+        <div class="role__card">
+          <div class="role__avatar" style="font-size: 24px;">🏭</div>
+          <h3>Служба эксплуатации</h3>
+          <p>Управление ТОиР, планирование работ, контроль исправности оборудования</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="trust section">
+    <div class="container">
+      <h2 class="section__title">Доказанные результаты внедрения</h2>
+      <div class="solution__numbers">
+        <div class="stat__card">
+          <div class="stat__value">↓ 30%</div>
+          <div class="stat__label">Сокращение технологических потерь НП</div>
+        </div>
+        <div class="stat__card">
+          <div class="stat__value">↓ 30%</div>
+          <div class="stat__label">Снижение простоев оборудования</div>
+        </div>
+        <div class="stat__card">
+          <div class="stat__value">↓ 21%</div>
+          <div class="stat__label">Сокращение времени ремонтов</div>
+        </div>
+        <div class="stat__card">
+          <div class="stat__value">99%</div>
+          <div class="stat__label">Обеспечение SLA надежности</div>
+        </div>
+        <div class="stat__card">
+          <div class="stat__value">↓ 5%</div>
+          <div class="stat__label">Снижение OPEX</div>
+        </div>
+        <div class="stat__card">
+          <div class="stat__value">100%</div>
+          <div class="stat__label">Автоматизация процессов учета</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="integrations section" id="integrations">
+    <div class="container">
+      <h2 class="section__title">Интеграции и экосистема</h2>
+      <p class="integrations__sub" style="margin-bottom: 60px !important; padding-bottom: 30px !important; line-height: 1.8 !important;">АСУП интегрируется с ведущими системами предприятия для безопасного обмена данными в реальном времени</p>
+      <div class="integrations__row">
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #004B87;">1С</span>
+          1С: Учет
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #2563EB;">ERP</span>
+          SAP, Oracle
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #7C3AED;">LIMS</span>
+          Лабораторная информация
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #D97706;">SCADA</span>
+          Управление процессами
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #059669;">OPC</span>
+          OPC UA / MQTT
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #DC2626;">РЖД</span>
+          ЭТРАН
+        </div>
+      </div>
+      <div class="integrations__row">
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #16A34A;">REST</span>
+          REST API
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #7C3AED;">WebSocket</span>
+          Real-time sync
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #2563EB;">SOAP</span>
+          XML Exchange
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #EA580C;">Artimis</span>
+          Очередь сообщений
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #059669;">RocksDB</span>
+          Fast Storage
+        </div>
+        <div class="integ__badge">
+          <span class="integ__logo" style="background: #4F46E5;">LDAP/AD</span>
+          Directory Service
+        </div>
+      </div>
+      <p class="integrations__note">Поддержка кастомных интеграций и расширений через открытый Plugin SPI</p>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech-stack section">
+    <div class="container">
+      <h2 class="section__title">Стек технологий</h2>
+      <p style="text-align: center; color: var(--text-2); margin-bottom: 3rem; font-size: 1.05rem;">Платформа построена на проверенных, масштабируемых и надежных технологиях</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <!-- Backend -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">🔧 Backend</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Java</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">основной язык платформы</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Spring Boot</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">микросервисная архитектура</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Tomcat</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">высокопроизводительный сервер</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">RocksDB</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">быстрое хранилище</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Apache Artemis</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">очередь сообщений</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Database -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">📊 Данные</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">PostgreSQL</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">основная база данных</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">TimescaleDB</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">временные ряды</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Redis</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">кэширование</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">ElasticSearch</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">полнотекстовый поиск</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">ClickHouse</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">аналитика</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Frontend -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">🎨 Frontend</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">React</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">современный UI</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">TypeScript</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">типизированность</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Tailwind CSS</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">стилизация</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">WebSocket API</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">real-time</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">D3.js / Recharts</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">визуализация</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">⚙️ DevOps</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Docker</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">контейнеризация</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Kubernetes</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">оркестрация</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">GitLab CI/CD</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">деплой</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Prometheus</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">мониторинг</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Grafana</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">визуализация метрик</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Security -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">🔐 Безопасность</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">OAuth 2.0 / JWT</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">аутентификация</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">LDAP / Active Directory</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">интеграция</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">TLS 1.3</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">шифрование</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Audit Logging</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">логирование</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">FIPS 140-2</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">соответствие</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Scalability -->
+        <div class="tech__card">
+          <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.3rem;">📈 Масштабирование</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Horizontal Scaling</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">масштабирование</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Load Balancing</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">балансировка</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Multi-Tenancy</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">мультитенантность</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">High Availability</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">высокая доступность</span>
+            </li>
+            <li style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-2);">
+              <strong style="color: var(--text);">Disaster Recovery</strong>
+              <span style="font-size: 0.9rem; opacity: 0.85;">восстановление</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta section" id="cta">
+    <div class="container">
+      <div class="cta__glow"></div>
+      <div class="cta__inner">
+        <h2 class="cta__title">Готовы повысить эффективность?</h2>
+        <p class="cta__sub">АСУП уже внедрена на ведущих предприятиях и доказала свою эффективность. Получите индивидуальное предложение для вашего объекта.</p>
+        <div class="cta__actions">
+          <div class="cta__form">
+            <input type="email" class="cta__input" placeholder="Ваш email" />
+            <button class="btn btn--primary">Запросить демо</button>
+          </div>
+          <p class="cta__note">Свяжемся в течение 24 часов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <!-- FOOTER -->
+  <footer class="footer section">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+          <path d="M21.5625 46C21.5625 56.359 28.1356 65.6278 37.9189 69.0643C39.3234 69.5576 40.8618 68.8192 41.3553 67.4146C41.8487 66.0102 41.11 64.4717 39.7055 63.9783C32.078 61.2991 26.9531 54.0741 26.9531 46C26.9531 35.4974 35.4974 26.9531 46 26.9531C48.8905 26.9531 51.6673 27.5867 54.2538 28.8359C55.5942 29.4838 57.2055 28.9218 57.8531 27.5815C58.5007 26.2412 57.939 24.6298 56.5985 23.9822C54.0883 22.7695 51.4395 22.009 48.6953 21.7091V16.2966C61.7027 17.4897 72.2824 26.9891 75.0947 39.4083C75.4228 40.8575 76.8633 41.7709 78.3186 41.4419C79.7705 41.1132 80.6808 39.6698 80.3521 38.2179C76.8019 22.5386 62.7438 10.7812 46 10.7812C39.3338 10.7812 32.8392 12.661 27.2185 16.2172C25.9605 17.013 25.5859 18.6782 26.3819 19.936C27.1777 21.1941 28.8431 21.5686 30.1007 20.7726C34.0966 18.2444 38.6157 16.7217 43.3047 16.2978V21.7118C31.0935 23.0579 21.5625 33.4361 21.5625 46Z" fill="white"/>
+          <path d="M78.3182 50.5587C76.8669 50.2299 75.4231 51.1404 75.0943 52.5922C74.0553 57.1809 71.909 61.4729 68.8974 65.0857L65.0704 61.2587C68.462 57.0183 70.4375 51.674 70.4375 46C70.4375 42.2907 69.6235 38.7248 68.0178 35.4013C67.3702 34.0612 65.759 33.4995 64.4183 34.1469C63.078 34.7945 62.5163 36.406 63.1639 37.7464C64.0198 39.518 64.5865 41.379 64.8586 43.3047H59.388C58.133 37.0613 52.6077 32.3438 46.0002 32.3438C38.47 32.3438 32.3439 38.4699 32.3439 46C32.3439 53.5302 38.47 59.6563 46.0002 59.6563C52.6077 59.6563 58.133 54.9388 59.388 48.6953H64.8516C63.8548 55.6464 59.0613 61.6016 52.2945 63.9785C50.8902 64.4719 50.1515 66.0104 50.6447 67.4148C51.1382 68.8193 52.6766 69.5578 54.0811 69.0645C56.734 68.1327 59.1483 66.769 61.2621 65.0739L65.0887 68.9005C59.7206 73.384 52.9235 75.8282 46 75.8282C29.5527 75.8282 16.1719 62.4474 16.1719 46C16.1719 40.3557 17.7628 34.858 20.7726 30.1009C21.5686 28.8429 21.194 27.1779 19.936 26.3821C18.678 25.5863 17.0132 25.9607 16.2172 27.2187C12.661 32.8394 10.7812 39.3338 10.7812 46C10.7812 65.4198 26.5803 81.2188 46 81.2188C62.7442 81.2188 76.8013 69.462 80.3519 53.7827C80.6806 52.331 79.7701 50.8875 78.3182 50.5587ZM46 54.2657C41.4424 54.2657 37.7344 50.5576 37.7344 46C37.7344 41.4424 41.4424 37.7344 46 37.7344C50.5576 37.7344 54.2656 41.4424 54.2656 46C54.2656 50.5576 50.5576 54.2657 46 54.2657Z" fill="white"/>
+          <path d="M46 0C20.5771 0 0 20.5737 0 46C0 71.4229 20.5737 92 46 92C71.4227 92 92 71.4263 92 46C92 20.5771 71.4263 0 46 0ZM46 86.6094C23.5565 86.6094 5.39062 68.4467 5.39062 46C5.39062 23.5565 23.5533 5.39062 46 5.39062C68.4433 5.39062 86.6094 23.5531 86.6094 46C86.6094 68.4433 68.4469 86.6094 46 86.6094Z" fill="white"/>
+        </svg>
+        АСУП ПНПО
+      </div>
+      <nav class="footer__nav">
+        <a href="#modules">Функции</a>
+        <a href="#industries">Применение</a>
+        <a href="#integrations">Интеграции</a>
+        <a href="#roles">Роли</a>
+        <a href="#cta">Контакты</a>
+      </nav>
+      <p class="footer__copy">© 2025 ООО "ИОТ Решения". Автоматизированная система управления производством. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    const navLinks = document.querySelector('.nav__links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
+    });
+
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Скрываем все гриды
+        const allGrids = document.querySelectorAll('.modules__grid');
+        allGrids.forEach(grid => {
+          grid.style.display = 'none';
+        });
+
+        // Убираем активный класс со всех табов
+        tabs.forEach(t => t.classList.remove('tab--active'));
+
+        // Добавляем активный класс текущему табу
+        tab.classList.add('tab--active');
+
+        // Показываем нужный грид
+        const tabId = tab.dataset.tab;
+        const element = document.getElementById(tabId);
+        if (element) element.style.display = 'grid';
+      });
+    });
+
+    // FAQ
+    const faqButtons = document.querySelectorAll('.faq__q');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        btn.classList.toggle('open');
+        answer.classList.toggle('open');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+          navLinks.classList.remove('open');
+        }
+      });
+    });
+
+    // Reveal animation
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
