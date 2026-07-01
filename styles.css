@@ -1051,10 +1051,10 @@ img { max-width: 100%; display: block; }
 
   .container { padding: 0 12px; width: 100%; overflow-x: hidden; }
 
-  .hero { padding: 70px 0 20px; overflow-x: hidden; }
+  .hero { padding: 60px 0 20px; overflow-x: hidden; }
   .hero__inner { padding: 0; width: 100%; }
-  .hero__title { font-size: 20px; line-height: 1.2; margin-bottom: 10px; }
-  .hero__sub { font-size: 12px; line-height: 1.4; margin-bottom: 14px; width: 100%; max-height: 90px; overflow: hidden; }
+  .hero__title { font-size: 20px; line-height: 1.2; margin-bottom: 12px; }
+  .hero__sub { display: none; }
   .hero__actions { flex-direction: column; gap: 8px; }
   .hero__actions .btn { width: 100%; padding: 10px 16px; font-size: 12px; }
   .hero__dashboard { max-width: 100%; width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
@@ -1070,7 +1070,7 @@ img { max-width: 100%; display: block; }
     min-height: 30px;
     flex-shrink: 0;
     text-align: center;
-    white-space: nowrap;
+    white-space: normal;
   }
   .tabs {
     gap: 2px;
@@ -1091,6 +1091,13 @@ img { max-width: 100%; display: block; }
   .module__icon { font-size: 24px; margin-bottom: 6px; }
   .module__card h3 { font-size: 14px; margin-bottom: 6px; }
   .module__card p { font-size: 12px; line-height: 1.4; margin-bottom: 6px; }
+
+  .integ__badge {
+    white-space: normal;
+    word-break: break-word;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
 }
 
 /* ─── TECH STACK ─────────────────────────────────────────────── */
