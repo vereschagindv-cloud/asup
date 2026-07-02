@@ -78,8 +78,53 @@
         <a href="#modules" class="btn btn--ghost">Смотреть возможности</a>
       </div>
       <div class="hero__dashboard-row fade-in" style="width: 100%; max-width: 1120px; margin: 0 auto; overflow-x: hidden; display: flex; align-items: center; justify-content: center; gap: 28px;">
-        <div class="hero__side-img" aria-hidden="true" style="flex: 1; max-width: 320px; height: 420px; flex-shrink: 0; -webkit-mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 30%, transparent 100%); mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 30%, transparent 100%);">
-          <img src="https://images.unsplash.com/photo-1698031610493-c19fa20dfeab?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Промышленные трубопроводы и клапаны" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.55) saturate(1.15) contrast(1.05);" />
+        <div class="hero__side-img" aria-hidden="true" style="flex: 1; max-width: 260px; height: 420px; flex-shrink: 0;">
+          <svg width="100%" height="100%" viewBox="0 0 240 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+            <defs>
+              <radialGradient id="tankGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E61C1C" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#E61C1C" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="levelFill" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#E61C1C" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#E61C1C" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="tankClip">
+                <path d="M60 110 L60 330 A60 16 0 0 0 180 330 L180 110 A60 16 0 0 1 60 110 Z"/>
+              </clipPath>
+            </defs>
+
+            <ellipse cx="120" cy="230" rx="100" ry="150" fill="url(#tankGlow)"/>
+
+            <path d="M60 110 L120 68 L180 110" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            <ellipse cx="120" cy="110" rx="60" ry="16" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="rgba(255,255,255,.02)"/>
+
+            <rect x="60" y="185" width="120" height="145" fill="url(#levelFill)" clip-path="url(#tankClip)"/>
+
+            <line x1="60" y1="110" x2="60" y2="330" stroke="rgba(255,255,255,.30)" stroke-width="2"/>
+            <line x1="180" y1="110" x2="180" y2="330" stroke="rgba(255,255,255,.30)" stroke-width="2"/>
+            <path d="M60 330 A60 16 0 0 0 180 330" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="none"/>
+
+            <path d="M60 160 A60 16 0 0 0 180 160" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+            <path d="M60 210 A60 16 0 0 0 180 210" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+            <path d="M60 260 A60 16 0 0 0 180 260" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+
+            <line x1="193" y1="122" x2="193" y2="322" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="200" y1="126" x2="200" y2="318" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="193" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="193" y1="190" x2="200" y2="190" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="193" y1="230" x2="200" y2="230" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="193" y1="270" x2="200" y2="270" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+            <line x1="193" y1="310" x2="200" y2="310" stroke="rgba(255,255,255,.20)" stroke-width="1.5"/>
+
+            <path d="M60 300 L26 300 L26 356" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="none"/>
+            <circle cx="26" cy="376" r="14" stroke="#E61C1C" stroke-width="2" fill="rgba(230,28,28,.08)"/>
+            <line x1="26" y1="362" x2="26" y2="390" stroke="#E61C1C" stroke-width="2"/>
+            <line x1="12" y1="376" x2="40" y2="376" stroke="#E61C1C" stroke-width="2"/>
+
+            <circle cx="120" cy="88" r="4" fill="#E61C1C"/>
+            <circle cx="120" cy="88" r="9" fill="none" stroke="#E61C1C" stroke-opacity="0.4" stroke-width="1.5"/>
+          </svg>
         </div>
 
         <div class="hero__dashboard" aria-hidden="true" style="width: 100%; max-width: 400px; overflow-x: hidden; flex-shrink: 0;">
@@ -140,8 +185,42 @@
         </div>
         </div>
 
-        <div class="hero__side-img" aria-hidden="true" style="flex: 1; max-width: 320px; height: 420px; flex-shrink: 0; -webkit-mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 30%, transparent 100%); mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 30%, transparent 100%);">
-          <img src="https://images.unsplash.com/photo-1698031610524-c35e7ebbba2c?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Промышленное трубопроводное оборудование с клапанами" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.55) saturate(1.15) contrast(1.05);" />
+        <div class="hero__side-img" aria-hidden="true" style="flex: 1; max-width: 260px; height: 420px; flex-shrink: 0;">
+          <svg width="100%" height="100%" viewBox="0 0 240 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+            <defs>
+              <radialGradient id="pipeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E61C1C" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#E61C1C" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <ellipse cx="120" cy="210" rx="105" ry="155" fill="url(#pipeGlow)"/>
+
+            <line x1="20" y1="140" x2="220" y2="140" stroke="rgba(255,255,255,.28)" stroke-width="10" stroke-linecap="round"/>
+            <line x1="20" y1="140" x2="220" y2="140" stroke="rgba(255,255,255,.08)" stroke-width="3" stroke-linecap="round"/>
+
+            <line x1="70" y1="140" x2="70" y2="270" stroke="rgba(255,255,255,.28)" stroke-width="10" stroke-linecap="round"/>
+            <line x1="170" y1="140" x2="170" y2="80" stroke="rgba(255,255,255,.28)" stroke-width="10" stroke-linecap="round"/>
+
+            <circle cx="170" cy="56" r="24" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="rgba(255,255,255,.03)"/>
+            <line x1="170" y1="56" x2="183" y2="42" stroke="#E61C1C" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="170" cy="56" r="3" fill="#E61C1C"/>
+            <path d="M154 56 A16 16 0 0 1 178 40" stroke="rgba(230,28,28,.35)" stroke-width="2" fill="none"/>
+
+            <circle cx="120" cy="140" r="17" stroke="#E61C1C" stroke-width="2.5" fill="#0D1B2A"/>
+            <line x1="120" y1="123" x2="120" y2="157" stroke="#E61C1C" stroke-width="2.5"/>
+            <line x1="103" y1="140" x2="137" y2="140" stroke="#E61C1C" stroke-width="2.5"/>
+
+            <circle cx="70" cy="296" r="18" stroke="#E61C1C" stroke-width="2.5" fill="rgba(230,28,28,.08)"/>
+            <line x1="70" y1="278" x2="70" y2="314" stroke="#E61C1C" stroke-width="2.5"/>
+            <line x1="52" y1="296" x2="88" y2="296" stroke="#E61C1C" stroke-width="2.5"/>
+
+            <line x1="70" y1="296" x2="70" y2="350" stroke="rgba(255,255,255,.28)" stroke-width="10" stroke-linecap="round"/>
+            <line x1="70" y1="350" x2="190" y2="350" stroke="rgba(255,255,255,.28)" stroke-width="10" stroke-linecap="round"/>
+
+            <path d="M198 135 L210 140 L198 145" stroke="rgba(255,255,255,.35)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M112 340 L108 350 L112 360" stroke="rgba(255,255,255,.30)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>
