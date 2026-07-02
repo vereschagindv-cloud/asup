@@ -77,70 +77,60 @@
         <a href="#cta" class="btn btn--primary">Запросить демо на ваших данных</a>
         <a href="#modules" class="btn btn--ghost">Смотреть возможности</a>
       </div>
-      <div class="hero__dashboard fade-in" aria-hidden="true" style="width: 100%; max-width: 100%; overflow-x: hidden;">
-        <div class="dashboard" style="width: 100%; box-sizing: border-box; padding: 0; overflow: hidden;">
+      <div class="hero__dashboard fade-in" aria-hidden="true" style="width: 100%; max-width: 400px; margin: 0 auto; overflow-x: hidden;">
+        <div class="dashboard" style="width: 100%; box-sizing: border-box; padding: 26px 24px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 24px; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 8px 64px rgba(0,0,0,.5);">
 
           <!-- Заголовок -->
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid #ececec; background: #fff; box-sizing: border-box; width: 100%;">
-            <div style="font-size: 13px; font-weight: 700; color: #111;">Управление производством ПНПО</div>
-            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #16a34a; font-weight: 600; flex-shrink: 0;">
-              <span class="dot dot--green" style="width: 6px; height: 6px;"></span>Онлайн
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px;">
+            <div style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .06em;">ПНПО · Производство</div>
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #4ade80; font-weight: 600; flex-shrink: 0;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #4ade80; display: inline-block; animation: pulse 2s ease-in-out infinite;"></span>Онлайн
             </div>
           </div>
 
-          <!-- KPI -->
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 14px 16px; background: #fff; box-sizing: border-box; width: 100%;">
-            <div style="background: #fafafa; border: 1px solid #ececec; border-radius: 8px; padding: 8px; box-sizing: border-box; min-width: 0;">
-              <div style="font-size: 8px; color: #9ca3af; text-transform: uppercase; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Баланс</div>
-              <div style="font-size: 15px; font-weight: 800; color: #16a34a; white-space: nowrap;">+0.08%</div>
+          <!-- Радиальный индикатор -->
+          <div style="position: relative; width: 148px; height: 148px; margin: 0 auto 24px;">
+            <svg width="148" height="148" viewBox="0 0 120 120" style="display: block; transform: rotate(-90deg);">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="9"/>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#E61C1C" stroke-width="9" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="19.6"/>
+            </svg>
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div style="font-size: 34px; font-weight: 800; color: #fff; line-height: 1;">94%</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .04em; margin-top: 5px;">Эффективность</div>
             </div>
-            <div style="background: #fafafa; border: 1px solid #ececec; border-radius: 8px; padding: 8px; box-sizing: border-box; min-width: 0;">
-              <div style="font-size: 8px; color: #9ca3af; text-transform: uppercase; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Простои</div>
-              <div style="font-size: 15px; font-weight: 800; color: #16a34a; white-space: nowrap;">↓ 30%</div>
+          </div>
+
+          <!-- Статы -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 22px;">
+            <div style="text-align: center; padding: 10px 4px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; box-sizing: border-box;">
+              <div style="font-size: 14px; font-weight: 800; color: #4ade80; white-space: nowrap;">↓ 30%</div>
+              <div style="font-size: 8px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .03em; margin-top: 3px;">Простои</div>
             </div>
-            <div style="background: #fafafa; border: 1px solid #ececec; border-radius: 8px; padding: 8px; box-sizing: border-box; min-width: 0;">
-              <div style="font-size: 8px; color: #9ca3af; text-transform: uppercase; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">SLA</div>
-              <div style="font-size: 15px; font-weight: 800; color: #111; white-space: nowrap;">99.2%</div>
+            <div style="text-align: center; padding: 10px 4px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; box-sizing: border-box;">
+              <div style="font-size: 14px; font-weight: 800; color: #4ade80; white-space: nowrap;">+0.08%</div>
+              <div style="font-size: 8px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .03em; margin-top: 3px;">Баланс</div>
             </div>
-            <div style="background: #fafafa; border: 1px solid #ececec; border-radius: 8px; padding: 8px; box-sizing: border-box; min-width: 0;">
-              <div style="font-size: 8px; color: #9ca3af; text-transform: uppercase; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Оборуд.</div>
-              <div style="font-size: 15px; font-weight: 800; color: #111; white-space: nowrap;">3/3</div>
+            <div style="text-align: center; padding: 10px 4px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; box-sizing: border-box;">
+              <div style="font-size: 14px; font-weight: 800; color: #fff; white-space: nowrap;">99.2%</div>
+              <div style="font-size: 8px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .03em; margin-top: 3px;">SLA</div>
             </div>
           </div>
 
           <!-- Резервуарный парк -->
-          <div style="padding: 9px 16px 5px; font-size: 10px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .05em; background: #fafafa; border-top: 1px solid #ececec; box-sizing: border-box; width: 100%;">Резервуарный парк</div>
-          <div style="padding: 8px 16px 10px; background: #fff; display: flex; flex-direction: column; gap: 9px; box-sizing: border-box; width: 100%;">
-            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
-              <span style="font-size: 11px; color: #555; font-weight: 500; width: 46px; flex-shrink: 0;">РВС-1</span>
-              <span style="flex: 1; height: 6px; background: rgba(0,0,0,.06); border-radius: 4px; overflow: hidden; display: block;"><span style="display: block; height: 100%; width: 82%; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 4px;"></span></span>
-              <span style="font-size: 11px; font-weight: 700; color: #16a34a; width: 34px; text-align: right; flex-shrink: 0;">82%</span>
+          <div style="font-size: 10px; font-weight: 700; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px;">Резервуарный парк</div>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; height: 60px;">
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+              <div style="width: 100%; height: 49px; background: linear-gradient(180deg, #E61C1C, #B01010); border-radius: 6px 6px 3px 3px;"></div>
+              <div style="font-size: 9px; color: rgba(255,255,255,.5); margin-top: 6px; white-space: nowrap;">РВС-1 · 82%</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
-              <span style="font-size: 11px; color: #555; font-weight: 500; width: 46px; flex-shrink: 0;">РВС-2</span>
-              <span style="flex: 1; height: 6px; background: rgba(0,0,0,.06); border-radius: 4px; overflow: hidden; display: block;"><span style="display: block; height: 100%; width: 54%; background: linear-gradient(90deg, #d97706, #f59e0b); border-radius: 4px;"></span></span>
-              <span style="font-size: 11px; font-weight: 700; color: #d97706; width: 34px; text-align: right; flex-shrink: 0;">54%</span>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+              <div style="width: 100%; height: 32px; background: linear-gradient(180deg, #f59e0b, #d97706); border-radius: 6px 6px 3px 3px;"></div>
+              <div style="font-size: 9px; color: rgba(255,255,255,.5); margin-top: 6px; white-space: nowrap;">РВС-2 · 54%</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
-              <span style="font-size: 11px; color: #555; font-weight: 500; width: 46px; flex-shrink: 0;">Битум-1</span>
-              <span style="flex: 1; height: 6px; background: rgba(0,0,0,.06); border-radius: 4px; overflow: hidden; display: block;"><span style="display: block; height: 100%; width: 91%; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 4px;"></span></span>
-              <span style="font-size: 11px; font-weight: 700; color: #16a34a; width: 34px; text-align: right; flex-shrink: 0;">91%</span>
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+              <div style="width: 100%; height: 55px; background: linear-gradient(180deg, #E61C1C, #B01010); border-radius: 6px 6px 3px 3px;"></div>
+              <div style="font-size: 9px; color: rgba(255,255,255,.5); margin-top: 6px; white-space: nowrap;">Битум-1 · 91%</div>
             </div>
-          </div>
-
-          <!-- Задачи смены -->
-          <div style="padding: 9px 16px 5px; font-size: 10px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .05em; background: #fafafa; border-top: 1px solid #ececec; box-sizing: border-box; width: 100%;">Задачи смены</div>
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 16px; background: #fff; border-bottom: 1px solid #f2f2f2; box-sizing: border-box; width: 100%;">
-            <span style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">Приемка НП РВС-1</span>
-            <span style="display: inline-block; background: #16a34a; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 10px; border-radius: 4px; white-space: nowrap; flex-shrink: 0;">ВЫПОЛНЯЕТСЯ</span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 16px; background: #fafafa; border-bottom: 1px solid #f2f2f2; box-sizing: border-box; width: 100%;">
-            <span style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">Контроль качества · 5 проб</span>
-            <span style="display: inline-block; background: #d97706; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 10px; border-radius: 4px; white-space: nowrap; flex-shrink: 0;">ОЖИДАНИЕ</span>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 16px; background: #fff; box-sizing: border-box; width: 100%;">
-            <span style="font-size: 12px; font-weight: 600; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">Отпуск в ТС · 180 м³</span>
-            <span style="display: inline-block; background: #6b7280; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 10px; border-radius: 4px; white-space: nowrap; flex-shrink: 0;">ГОТОВО</span>
           </div>
         </div>
       </div>
